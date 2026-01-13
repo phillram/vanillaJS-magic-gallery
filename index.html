@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic the Gathering Card Browser</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Magic the Gathering Card Browser</h1>
+            <p>Explore and discover Magic cards</p>
+        </header>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="setFilter">Filter by Set:</label>
+                <select id="setFilter">
+                    <option value="">All Sets</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <button id="randomCardBtn" class="btn btn-primary">Get Random Card</button>
+            </div>
+
+            <div class="control-group">
+                <input 
+                    type="text" 
+                    id="cardSearch" 
+                    placeholder="Search by card name..."
+                    class="search-input"
+                >
+                <button id="searchBtn" class="btn btn-secondary">Search</button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Loading card...</p>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+
+        <div id="cardContainer" class="card-container hidden">
+            <div class="card-wrapper">
+                <div class="card-image-container">
+                    <img id="cardImage" src="" alt="Card Image" class="card-image">
+                </div>
+                <div class="card-details">
+                    <h2 id="cardName"></h2>
+                    <p id="cardType" class="card-type"></p>
+                    <p id="cardSet" class="card-set"></p>
+                    <div id="cardStats" class="card-stats"></div>
+                    <p id="cardText" class="card-text"></p>
+                    <p id="cardFlavor" class="card-flavor"></p>
+                    <div class="card-footer">
+                        <span id="cardArtist" class="card-artist"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="noResults" class="no-results hidden">
+            <p>No cards found. Try a different search or get a random card!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
